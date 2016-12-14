@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lpc.dao.UserDao">
+
+    <resultMap id="BaseResultMap" type="com.lpc.domain.User">
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="credits" property="credits" jdbcType="INTEGER"/>
+        <result column="last_visit" property="lastVisit" jdbcType="TIMESTAMP"/>
+        <result column="last_ip" property="lastIp" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id, user_name, password, credits, last_visit, last_ip
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_id = #{userId,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from user
+        where user_id = #{userId,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" parameterType="com.lpc.domain.User">
+    insert into user (user_id, user_name, password,
+      credits, last_visit, last_ip)
+    values (#{userId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{credits,jdbcType=INTEGER}, #{lastVisit,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR}
+      )
+  </insert>
+
+    <insert id="insertSelective" parameterType="com.lpc.domain.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="credits != null">
+                credits,
+            </if>
+            <if test="lastVisit != null">
+                last_visit,
+            </if>
+            <if test="lastIp != null">
+                last_ip,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="credits != null">
+                #{credits,jdbcType=INTEGER},
+            </if>
+            <if test="lastVisit != null">
+                #{lastVisit,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastIp != null">
+                #{lastIp,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByIdSelective" parameterType="com.lpc.domain.User">
+        update user
+        <set>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="credits != null">
+                credits = #{credits,jdbcType=INTEGER},
+            </if>
+            <if test="lastVisit != null">
+                last_visit = #{lastVisit,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastIp != null">
+                last_ip = #{lastIp,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateById" parameterType="com.lpc.domain.User">
+        update user
+        set user_name = #{userName,jdbcType=VARCHAR},
+            password = #{password,jdbcType=VARCHAR},
+            credits = #{credits,jdbcType=INTEGER},
+            last_visit = #{lastVisit,jdbcType=TIMESTAMP},
+            last_ip = #{lastIp,jdbcType=VARCHAR}
+        where user_id = #{userId,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectBySelective" parameterType="com.lpc.domain.User" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        <where>
+            <if test="userName != null">
+                and user_name = #{userName,jdbcType=VARCHAR}
+            </if>
+            <if test="password != null">
+                and password = #{password,jdbcType=VARCHAR}
+            </if>
+            <if test="credits != null">
+                and credits = #{credits,jdbcType=INTEGER}
+            </if>
+            <if test="lastVisit != null">
+                and last_visit = #{lastVisit,jdbcType=TIMESTAMP}
+            </if>
+            <if test="lastIp != null">
+                and last_ip = #{lastIp,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+
+</mapper>
