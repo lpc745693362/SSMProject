@@ -11,6 +11,6 @@ public interface UserService {
 
     User findByUserName(String userName);
 
-    void LoginSuccess(User user);
+    void loginSuccess(User user);
 
 }

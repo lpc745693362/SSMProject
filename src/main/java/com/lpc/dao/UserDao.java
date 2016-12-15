@@ -13,11 +13,11 @@ public interface UserDao {
 
     int insertSelective(User user);
 
-    User selectByPrimaryKey(Long userId);
+    User selectById(Long userId);
 
-    int updateByPrimaryKeySelective(User user);
+    int updateByIdSelective(User user);
 
-    int updateByPrimaryKey(User user);
+    int updateById(User user);
 
     User selectBySelective(User user);
 

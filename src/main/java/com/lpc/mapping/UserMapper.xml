@@ -28,11 +28,8 @@
     </delete>
 
     <insert id="insert" parameterType="com.lpc.domain.User">
-    insert into user (user_id, user_name, password,
-      credits, last_visit, last_ip)
-    values (#{userId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-      #{credits,jdbcType=INTEGER}, #{lastVisit,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR}
-      )
+    insert into user (user_name, password, credits, last_visit, last_ip)
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{credits,jdbcType=INTEGER}, #{lastVisit,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR})
   </insert>
 
     <insert id="insertSelective" parameterType="com.lpc.domain.User">

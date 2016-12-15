@@ -26,8 +26,8 @@
   </delete>
 
     <insert id="insert" parameterType="com.lpc.domain.LoginLog">
-    insert into login_log (login_log_id, user_id, login_ip, login_time)
-    values (#{loginLogId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{loginIp,jdbcType=VARCHAR}, #{loginTime,jdbcType=TIMESTAMP})
+    insert into login_log (user_id, login_ip, login_time)
+    values (#{userId,jdbcType=BIGINT}, #{loginIp,jdbcType=VARCHAR}, #{loginTime,jdbcType=TIMESTAMP})
   </insert>
 
     <insert id="insertSelective" parameterType="com.lpc.domain.LoginLog">

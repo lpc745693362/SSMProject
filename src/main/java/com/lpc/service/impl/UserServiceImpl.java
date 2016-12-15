@@ -43,19 +43,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void LoginSuccess(User user) {
-        Date date = new Date();
-
+    public void loginSuccess(User user) {
         user.setCredits(user.getCredits() + Constants.CREDITS_STEP);
-        user.setLastIp(IpUtils.getIp());
-        user.setLastVisit(date);
 
         LoginLog loginLog = new LoginLog();
         loginLog.setUserId(user.getUserId());
         loginLog.setLoginIp(user.getLastIp());
-        loginLog.setLoginTime(date);
+        loginLog.setLoginTime(user.getLastVisit());
 
-        userDao.updateByPrimaryKeySelective(user);
+        userDao.updateByIdSelective(user);
         loginLogDao.insert(loginLog);
     }
 
