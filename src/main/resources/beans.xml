@@ -4,6 +4,49 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <bean id="car" class="com.lpc.other.one.Car" init-method="myInit" destroy-method="myDestory">
+        <property name="brand" value="红旗CA72"/>
+        <property name="maxSpeed" value="250"/>
+    </bean>
+
+    <!-- 构造函数注入 -->
+    <bean id="person" class="com.lpc.other.one.Person">
+        <constructor-arg index="0" type="java.lang.String" value="341621199110071112"/>
+        <constructor-arg index="1" type="java.lang.String" value="adou"/>
+        <constructor-arg index="2" type="java.lang.Integer" value="25"/>
+        <property name="favorites">
+            <list>
+                <value>看书</value>
+                <value>CF</value>
+            </list>
+        </property>
+        <property name="jobs">
+            <map>
+                <entry>
+                    <key>
+                        <value>AM</value>
+                    </key>
+                    <value>早会</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>PM</value>
+                    </key>
+                    <value>敲代码</value>
+                </entry>
+            </map>
+        </property>
+        <property name="mails">
+            <props>
+                <prop key="jobMail">liupengcheng1@jd.com</prop>
+                <prop key="lifeMail">745693362@qq.com</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="mailSendListener" class="com.lpc.other.two.MailSendListener"/>
+
+    <bean id="mailSender" class="com.lpc.other.two.MailSender"/>
 
 
 </beans>
