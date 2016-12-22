@@ -11,7 +11,7 @@
 
     <!-- 构造函数注入 -->
     <bean id="person" class="com.lpc.other.bean.Person">
-        <constructor-arg index="0" type="java.lang.String" value="341621199110071112"/>
+        <constructor-arg index="0" type="java.lang.String" value="123456789012345678"/>
         <constructor-arg index="1" type="java.lang.String" value="adou"/>
         <constructor-arg index="2" type="java.lang.Integer" value="25"/>
         <property name="favorites">
@@ -38,8 +38,8 @@
         </property>
         <property name="mails">
             <props>
-                <prop key="jobMail">liupengcheng1@jd.com</prop>
-                <prop key="lifeMail">745693362@qq.com</prop>
+                <prop key="jobMail">liupc@aa.com</prop>
+                <prop key="lifeMail">123456789@qq.com</prop>
             </props>
         </property>
     </bean>
