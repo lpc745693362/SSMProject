@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="car" class="com.lpc.other.one.Car" init-method="myInit" destroy-method="myDestory">
+    <bean id="car" class="com.lpc.other.bean.Car" init-method="myInit" destroy-method="myDestory">
         <property name="brand" value="红旗CA72"/>
         <property name="maxSpeed" value="250"/>
     </bean>
 
     <!-- 构造函数注入 -->
-    <bean id="person" class="com.lpc.other.one.Person">
+    <bean id="person" class="com.lpc.other.bean.Person">
         <constructor-arg index="0" type="java.lang.String" value="341621199110071112"/>
         <constructor-arg index="1" type="java.lang.String" value="adou"/>
         <constructor-arg index="2" type="java.lang.Integer" value="25"/>
@@ -44,9 +44,9 @@
         </property>
     </bean>
 
-    <bean id="mailSendListener" class="com.lpc.other.two.MailSendListener"/>
+    <bean id="mailSendListener" class="com.lpc.other.monitor.MailSendListener"/>
 
-    <bean id="mailSender" class="com.lpc.other.two.MailSender"/>
+    <bean id="mailSender" class="com.lpc.other.monitor.MailSender"/>
 
 
 </beans>
