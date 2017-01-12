@@ -48,5 +48,8 @@
 
     <bean id="mailSender" class="com.lpc.other.monitor.MailSender"/>
 
+    <bean id="dog" class="com.lpc.other.aspect.one.Dog"/>
+
+    <bean id="cat" class="com.lpc.other.aspect.two.Cat"/>
 
 </beans>
