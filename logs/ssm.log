@@ -1345,3 +1345,35 @@ Caused by: java.lang.IllegalArgumentException: error at ::0 can't find reference
 [INFO] [2017-01-05 11:54:59][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
 [INFO] [2017-01-05 11:54:59][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 [INFO] [2017-01-05 11:55:00][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@c0e1c69: startup date [Thu Jan 05 11:54:59 CST 2017]; root of context hierarchy
+[INFO] [2017-01-16 16:01:30][org.quartz.impl.StdSchedulerFactory]Using default implementation for ThreadExecutor
+[INFO] [2017-01-16 16:01:30][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: main
+[INFO] [2017-01-16 16:01:30][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[INFO] [2017-01-16 16:01:30][org.quartz.core.QuartzScheduler]Quartz Scheduler v.2.2.1 created.
+[INFO] [2017-01-16 16:01:30][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+[INFO] [2017-01-16 16:01:30][org.quartz.core.QuartzScheduler]Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[INFO] [2017-01-16 16:01:30][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+[INFO] [2017-01-16 16:01:30][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 2.2.1
+[INFO] [2017-01-16 16:01:30][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[INFO] [2017-01-16 16:02:06][org.quartz.impl.StdSchedulerFactory]Using default implementation for ThreadExecutor
+[INFO] [2017-01-16 16:02:06][org.quartz.simpl.SimpleThreadPool]Job execution threads will use class loader of thread: main
+[INFO] [2017-01-16 16:02:06][org.quartz.core.SchedulerSignalerImpl]Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[INFO] [2017-01-16 16:02:06][org.quartz.core.QuartzScheduler]Quartz Scheduler v.2.2.1 created.
+[INFO] [2017-01-16 16:02:06][org.quartz.simpl.RAMJobStore]RAMJobStore initialized.
+[INFO] [2017-01-16 16:02:06][org.quartz.core.QuartzScheduler]Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[INFO] [2017-01-16 16:02:06][org.quartz.impl.StdSchedulerFactory]Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+[INFO] [2017-01-16 16:02:06][org.quartz.impl.StdSchedulerFactory]Quartz scheduler version: 2.2.1
+[INFO] [2017-01-16 16:02:06][org.quartz.core.QuartzScheduler]Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
