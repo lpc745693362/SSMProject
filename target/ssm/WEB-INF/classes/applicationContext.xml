@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd"
+       default-lazy-init="true" default-autowire="byName">
+
+    <!-- 扫描类包，将标注spring注解的类自动转化为Bean，同时完成Bean的注入 -->
+    <context:component-scan base-package="com.lpc.*"></context:component-scan>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <import resource="spring-mybatis.xml"/>
+
+    <import resource="beans.xml"/>
+
+
+    <bean id="simpleAspectOne" class="com.lpc.other.aspect.one.SimpleAspectOne"></bean>
+    <bean id="simplePointcut" class="com.lpc.other.aspect.two.SimplePointcut"></bean>
+    <bean id="simpleAdvice" class="com.lpc.other.aspect.two.SimpleAdvice"></bean>
+
+</beans>

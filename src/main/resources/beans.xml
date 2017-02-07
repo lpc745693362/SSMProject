@@ -14,34 +14,6 @@
         <constructor-arg index="0" type="java.lang.String" value="123456789012345678"/>
         <constructor-arg index="1" type="java.lang.String" value="adou"/>
         <constructor-arg index="2" type="java.lang.Integer" value="25"/>
-        <property name="favorites">
-            <list>
-                <value>看书</value>
-                <value>CF</value>
-            </list>
-        </property>
-        <property name="jobs">
-            <map>
-                <entry>
-                    <key>
-                        <value>AM</value>
-                    </key>
-                    <value>早会</value>
-                </entry>
-                <entry>
-                    <key>
-                        <value>PM</value>
-                    </key>
-                    <value>敲代码</value>
-                </entry>
-            </map>
-        </property>
-        <property name="mails">
-            <props>
-                <prop key="jobMail">liupc@aa.com</prop>
-                <prop key="lifeMail">123456789@qq.com</prop>
-            </props>
-        </property>
     </bean>
 
     <bean id="mailSendListener" class="com.lpc.other.monitor.MailSendListener"/>

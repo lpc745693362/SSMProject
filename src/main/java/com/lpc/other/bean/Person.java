@@ -1,7 +1,5 @@
 package com.lpc.other.bean;
 
-import java.util.*;
-
 /**
  * Created by liupengcheng1 on 2016/12/16.
  */
@@ -10,9 +8,6 @@ public class Person {
     private String id;
     private String name;
     private Integer age;
-    private List favorites = new ArrayList();
-    private Map jobs = new HashMap();
-    private Properties mails = new Properties();
 
     public Person() {
     }
@@ -47,27 +42,4 @@ public class Person {
         this.age = age;
     }
 
-    public List getFavorites() {
-        return favorites;
-    }
-
-    public void setFavorites(List favorites) {
-        this.favorites = favorites;
-    }
-
-    public Map getJobs() {
-        return jobs;
-    }
-
-    public void setJobs(Map jobs) {
-        this.jobs = jobs;
-    }
-
-    public Properties getMails() {
-        return mails;
-    }
-
-    public void setMails(Properties mails) {
-        this.mails = mails;
-    }
 }
