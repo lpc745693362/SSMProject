@@ -1,7 +1,6 @@
 package com.lpc.service.impl;
 
 import com.lpc.constant.Constants;
-import com.lpc.constant.IpUtils;
 import com.lpc.dao.LoginLogDao;
 import com.lpc.dao.UserDao;
 import com.lpc.domain.LoginLog;
@@ -9,8 +8,6 @@ import com.lpc.domain.User;
 import com.lpc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 /**
  * Created by liupengcheng1 on 2016/12/14.

@@ -10,12 +10,15 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <aop:aspectj-autoproxy />
+
     <!-- 引入配置文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <!-- 主数据源 -->
+    <bean id="dataSourceMaster" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${driver}"/>
         <property name="url" value="${url}"/>
         <property name="username" value="${username}"/>
@@ -30,6 +33,37 @@
         <property name="minIdle" value="${minIdle}"></property>
         <!-- 获取连接最大等待时间 -->
         <property name="maxWait" value="${maxWait}"></property>
+    </bean>
+
+    <!-- 从数据源 -->
+    <bean id="dataSourceSlave" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${initialSize}"></property>
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${maxActive}"></property>
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${maxIdle}"></property>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${minIdle}"></property>
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${maxWait}"></property>
+    </bean>
+
+    <!-- 动态数据源 -->
+    <bean id="dataSource" class="com.lpc.util.DynamicDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <!-- write -->
+                <entry key="master" value-ref="dataSourceMaster" />
+                <!-- read -->
+                <entry key="slave" value-ref="dataSourceSlave" />
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="dataSourceMaster" />
     </bean>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
@@ -72,8 +106,19 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="transactionPointcut" expression="execution(* com.lpc.service..*(..))"/>
+        <aop:pointcut id="transactionPointcut" expression="execution(* com.lpc.service..*.*(..))"/>
         <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice"/>
     </aop:config>
+
+
+    <!-- 配置数据源切面 -->
+    <bean id="dataSourceAspect" class="com.lpc.util.DataSourceAspect" />
+    <aop:config>
+        <aop:aspect id="c" ref="dataSourceAspect">
+            <aop:pointcut id="tx" expression="execution(* com.lpc.dao..*.*(..))" />
+            <aop:before method="before" pointcut-ref="tx" />
+        </aop:aspect>
+    </aop:config>
+
 
 </beans>

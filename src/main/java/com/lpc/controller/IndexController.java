@@ -20,4 +20,9 @@ public class IndexController {
         return "service";
     }
 
+    @RequestMapping("/layout")
+    public String layoutIndex(){
+        return "layout";
+    }
+
 }

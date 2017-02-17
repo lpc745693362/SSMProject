@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
     <bean id="car" class="com.lpc.other.bean.Car" init-method="myInit" destroy-method="myDestory">
         <property name="brand" value="红旗CA72"/>
         <property name="maxSpeed" value="250"/>
@@ -23,5 +22,9 @@
     <bean id="dog" class="com.lpc.other.aspect.one.Dog"/>
 
     <bean id="cat" class="com.lpc.other.aspect.two.Cat"/>
+
+    <bean id="monkey" class="com.lpc.other.aspect.three.Monkey"/>
+
+    <bean id="administrator" class="com.lpc.other.aspect.three.Administrator"/>
 
 </beans>

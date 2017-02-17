@@ -10,6 +10,7 @@
             <ul>
                 <li><a href="/index/login.action">登录</a></li>
                 <li><a href="/index/service.action">服务调用</a> </li>
+                <li><a href="/index/layout.action">页面布局</a> </li>
             </ul>
         </div>
 
