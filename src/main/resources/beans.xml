@@ -20,8 +20,10 @@
 
     <bean id="administrator" class="com.lpc.other.aspect.three.Administrator"/>
 
-    <bean id="simpleAspectOne" class="com.lpc.other.aspect.one.SimpleAspectOne"></bean>
-    <bean id="simplePointcut" class="com.lpc.other.aspect.two.SimplePointcut"></bean>
-    <bean id="simpleAdvice" class="com.lpc.other.aspect.two.SimpleAdvice"></bean>
+    <bean id="simpleAspectOne" class="com.lpc.other.aspect.one.SimpleAspectOne" />
+    <bean id="simplePointcut" class="com.lpc.other.aspect.two.SimplePointcut" />
+    <bean id="simpleAdvice" class="com.lpc.other.aspect.two.SimpleAdvice" />
+
+    <bean id="dataSourceAspect" class="com.lpc.util.DataSourceAspect" />
 
 </beans>

@@ -112,13 +112,13 @@
 
 
     <!-- 配置数据源切面 -->
-    <bean id="dataSourceAspect" class="com.lpc.util.DataSourceAspect" />
-    <aop:config>
-        <aop:aspect id="c" ref="dataSourceAspect">
-            <aop:pointcut id="tx" expression="execution(* com.lpc.dao..*.*(..))" />
-            <aop:before method="before" pointcut-ref="tx" />
-        </aop:aspect>
-    </aop:config>
+    <!--<bean id="dataSourceAspect" class="com.lpc.util.DataSourceAspect" />-->
+    <!--<aop:config>-->
+        <!--<aop:aspect id="c" ref="dataSourceAspect">-->
+            <!--<aop:pointcut id="tx" expression="execution(* com.lpc.dao..*.*(..))" />-->
+            <!--<aop:before method="before" pointcut-ref="tx" />-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
 
 
 </beans>

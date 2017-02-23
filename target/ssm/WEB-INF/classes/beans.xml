@@ -8,13 +8,6 @@
         <property name="maxSpeed" value="250"/>
     </bean>
 
-    <!-- 构造函数注入 -->
-    <bean id="person" class="com.lpc.other.bean.Person">
-        <constructor-arg index="0" type="java.lang.String" value="123456789012345678"/>
-        <constructor-arg index="1" type="java.lang.String" value="adou"/>
-        <constructor-arg index="2" type="java.lang.Integer" value="25"/>
-    </bean>
-
     <bean id="mailSendListener" class="com.lpc.other.monitor.MailSendListener"/>
 
     <bean id="mailSender" class="com.lpc.other.monitor.MailSender"/>
@@ -26,5 +19,11 @@
     <bean id="monkey" class="com.lpc.other.aspect.three.Monkey"/>
 
     <bean id="administrator" class="com.lpc.other.aspect.three.Administrator"/>
+
+    <bean id="simpleAspectOne" class="com.lpc.other.aspect.one.SimpleAspectOne" />
+    <bean id="simplePointcut" class="com.lpc.other.aspect.two.SimplePointcut" />
+    <bean id="simpleAdvice" class="com.lpc.other.aspect.two.SimpleAdvice" />
+
+    <bean id="dataSourceAspect" class="com.lpc.util.DataSourceAspect" />
 
 </beans>

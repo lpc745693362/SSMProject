@@ -1,6 +1,9 @@
 package com.lpc.util;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 
 import java.lang.reflect.Method;
@@ -8,9 +11,16 @@ import java.lang.reflect.Method;
 /**
  * 数据源切面类：根据注解切换数据源
  */
+@Aspect
 public class DataSourceAspect {
 
-    public void before(JoinPoint point) {
+    @Pointcut("execution(* com.lpc.dao..*.*(..))")
+    private void doSomething() {
+
+    }
+
+    @Before("doSomething()")
+    public void beforeDo(JoinPoint point) {
         try {
             Object target = point.getTarget(); // 获取连接点所在的目标对象
             String methodName = point.getSignature().getName(); // 获取连接点的方法签名对象
