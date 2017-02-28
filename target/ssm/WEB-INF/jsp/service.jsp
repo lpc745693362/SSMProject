@@ -141,10 +141,5 @@
         return o;
     };
 
-    function formatParam(value){
-
-    }
-
-
 </script>
 

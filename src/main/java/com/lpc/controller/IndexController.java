@@ -25,4 +25,14 @@ public class IndexController {
         return "layout";
     }
 
+    @RequestMapping("/param")
+    public String paramIndex(){
+        return "param";
+    }
+
+    @RequestMapping("/charts")
+    public String chartsIndex(){
+        return "charts";
+    }
+
 }

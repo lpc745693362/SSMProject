@@ -11,6 +11,8 @@
                 <li><a href="/index/login.action">登录</a></li>
                 <li><a href="/index/service.action">服务调用</a> </li>
                 <li><a href="/index/layout.action">页面布局</a> </li>
+                <li><a href="/index/param.action">参数传递</a> </li>
+                <li><a href="/index/charts.action">图表</a> </li>
             </ul>
         </div>
 
