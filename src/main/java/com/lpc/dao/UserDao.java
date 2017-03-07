@@ -3,6 +3,8 @@ package com.lpc.dao;
 import com.lpc.domain.User;
 import com.lpc.util.DataSource;
 
+import java.util.List;
+
 /**
  * Created by liupengcheng1 on 2016/12/14.
  */
@@ -28,5 +30,8 @@ public interface UserDao {
 
     @DataSource("slave")
     User selectBySelective(User user);
+
+    @DataSource("slave")
+    List<User> selectAllUser();
 
 }

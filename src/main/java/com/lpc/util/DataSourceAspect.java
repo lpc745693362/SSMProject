@@ -32,7 +32,7 @@ public class DataSourceAspect {
             if (method != null && method.isAnnotationPresent(DataSource.class)) {
                 DataSource dataSource = method.getAnnotation(DataSource.class);
                 DynamicDataSourceHolder.putDataSource(dataSource.value());
-                System.out.println("this dataSource is =========== " + dataSource.value());
+                System.out.println("【dataSource：" + dataSource.value() + "】");
             }
         } catch (Exception e) {
             e.printStackTrace();

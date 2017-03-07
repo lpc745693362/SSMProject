@@ -35,4 +35,9 @@ public class IndexController {
         return "charts";
     }
 
+    @RequestMapping("/vue")
+    public String vueIndex(){
+        return "vue";
+    }
+
 }

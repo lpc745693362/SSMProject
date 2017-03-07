@@ -9,6 +9,8 @@ import com.lpc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by liupengcheng1 on 2016/12/14.
  */
@@ -50,6 +52,11 @@ public class UserServiceImpl implements UserService {
 
         userDao.updateByIdSelective(user);
         loginLogDao.insert(loginLog);
+    }
+
+    @Override
+    public List<User> selectAllUser() {
+        return userDao.selectAllUser();
     }
 
 }
