@@ -19,7 +19,6 @@ public class DealThread implements Runnable {
         this.socket = socket;
     }
 
-    @Override
     public void run() {
         try {
             // 初始化流

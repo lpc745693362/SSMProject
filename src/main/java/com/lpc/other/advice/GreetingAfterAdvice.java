@@ -16,7 +16,7 @@ public class GreetingAfterAdvice implements AfterReturningAdvice {
      * @param object    目标类
      * @throws Throwable
      */
-    @Override
+
     public void afterReturning(Object returnObj, Method method, Object[] args, Object object) throws Throwable {
         System.out.println("Please enjoy yourself!");
     }

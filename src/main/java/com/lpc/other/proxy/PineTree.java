@@ -5,7 +5,6 @@ package com.lpc.other.proxy;
  */
 public class PineTree implements Tree {
 
-    @Override
     public void grew() {
         System.out.println("I am grew up!");
     }

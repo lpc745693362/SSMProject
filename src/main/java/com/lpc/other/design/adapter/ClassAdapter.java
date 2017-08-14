@@ -5,8 +5,8 @@ package com.lpc.other.design.adapter;
  */
 public class ClassAdapter extends Adaptee implements Target {
 
-    @Override
     public void target() {
         this.run();
     }
+
 }

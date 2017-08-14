@@ -10,8 +10,9 @@ import java.util.Date;
  * 一个简单作业
  */
 public class SimpleJob implements Job {
-    @Override
+
     public void execute(JobExecutionContext jobContext) throws JobExecutionException {
         System.out.println(jobContext.getJobDetail().getJobDataMap().get("name") + " say hello to you. time is " + new Date());
     }
+
 }

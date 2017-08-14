@@ -2,12 +2,14 @@ package com.lpc.dao;
 
 import com.lpc.domain.User;
 import com.lpc.util.DataSource;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by liupengcheng1 on 2016/12/14.
  */
+@Service
 public interface UserDao {
 
     @DataSource("master")

@@ -13,7 +13,6 @@ public class ThreadB implements Runnable {
         this.lock = lock;
     }
 
-    @Override
     public void run() {
         try {
             synchronized (lock) {

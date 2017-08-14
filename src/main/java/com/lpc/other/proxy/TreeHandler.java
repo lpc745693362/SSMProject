@@ -14,7 +14,6 @@ public class TreeHandler implements InvocationHandler {
         this.target = target;
     }
 
-    @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // before invoke
         System.out.println("I am 格鲁特!");

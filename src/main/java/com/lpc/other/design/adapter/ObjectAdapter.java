@@ -11,7 +11,6 @@ public class ObjectAdapter implements Target {
         this.adaptee = adaptee;
     }
 
-    @Override
     public void target() {
         adaptee.run();
     }

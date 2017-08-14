@@ -55,7 +55,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="D:\Work\IntelliJ IDEA 14.0.2\work\SSMProject\target/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/ssm/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="SSMProject/web/Web" />
     </root>

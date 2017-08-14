@@ -17,7 +17,6 @@ public class MailSender implements ApplicationContextAware {
      * @param context
      * @throws BeansException
      */
-    @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException {
         this.context = context;
     }

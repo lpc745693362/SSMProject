@@ -2,10 +2,12 @@ package com.lpc.dao;
 
 import com.lpc.domain.LoginLog;
 import com.lpc.util.DataSource;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by liupengcheng1 on 2016/12/14.
  */
+@Service
 public interface LoginLogDao {
 
     @DataSource("master")

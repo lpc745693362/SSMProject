@@ -22,7 +22,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private LoginLogDao loginLogDao;
 
-    @Override
     public boolean hasMatchuser(String userName, String password) {
         User user = new User();
         user.setUserName(userName);
@@ -34,14 +33,12 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    @Override
     public User findByUserName(String userName) {
         User user = new User();
         user.setUserName(userName);
         return userDao.selectBySelective(user);
     }
 
-    @Override
     public void loginSuccess(User user) {
         user.setCredits(user.getCredits() + Constants.CREDITS_STEP);
 
@@ -54,7 +51,6 @@ public class UserServiceImpl implements UserService {
         loginLogDao.insert(loginLog);
     }
 
-    @Override
     public List<User> selectAllUser() {
         return userDao.selectAllUser();
     }
